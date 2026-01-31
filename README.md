@@ -1,7 +1,7 @@
 # TaskTrackerCLI
 Simple CLI app to track tasks: to-do, in progress, and done—great for practicing filesystem usage, input parsing, and CLI design.
 
-# commands CLI
+# comands CLI 
 # Adding a new task
 task-cli add "Buy groceries"
 # Output: Task added successfully (ID: 1)
