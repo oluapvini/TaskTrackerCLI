@@ -11,5 +11,6 @@
     "url": "TaskTrackerCLI"
   },
   "author": "oluapvini",
-  "license": "ISC"
+  "license": "ISC",
+  "type": "module"
 }
