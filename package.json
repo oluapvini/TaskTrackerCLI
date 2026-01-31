@@ -1,0 +1,15 @@
+{
+  "name": "tasktrackercli",
+  "version": "1.0.0",
+  "description": "Simple CLI app to track tasks: to-do, in progress, and done—great for practicing filesystem usage, input parsing, and CLI design.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "TaskTrackerCLI"
+  },
+  "author": "",
+  "license": "ISC"
+}
