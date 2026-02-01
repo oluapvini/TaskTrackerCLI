@@ -17,9 +17,9 @@ export function addTask(args) {
 
     const task = {
         id: newId,
-        description: description,
+        description,
         status: "todo",
-    }
+    };
 
     tasks.push(task);
     writeTasks(tasks);

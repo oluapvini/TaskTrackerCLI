@@ -6,7 +6,6 @@ const DB_PATH = path.resolve(process.cwd(), "tasks.json");
 export function ensureTaskFileExists() {
     if (!fs.existsSync(DB_PATH)) {
         fs.writeFileSync(DB_PATH, JSON.stringify([], null, 2), "utf8");
-
     }
 }
 
