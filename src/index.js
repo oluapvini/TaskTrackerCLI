@@ -1,4 +1,5 @@
-import { help } from "./untils/help.js";
+import { help } from "./utils/help.js";
+import { addTask } from "./commands/add.js";
 
 function notImplemented() {
   console.log(`${command} is not implemented yet.`);
@@ -13,6 +14,8 @@ if (!command) {
 
 switch (command) {
    case "add":
+    addTask(args);
+    break;
   case "list":
   case "update":
   case "delete":
