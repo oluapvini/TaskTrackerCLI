@@ -55,3 +55,33 @@ export function list(args) {
         console.log(`[${t.id}] (${t.status}) ${t.description}`);
     }
 }
+
+export function update(args) {
+    const description = args.slice(1).join(" ").trim();
+    const id = parseInt(args[0], 10);
+
+    if (isNaN(id)) {
+        console.log('Usage: update <id> "new description"');
+        help();
+        return;
+    }
+
+    if (!description) {
+        console.log('Usage: update <id> "new description"');
+        help();
+        return;
+    }
+
+    const tasks = readTasks();
+
+    const task = tasks.find(t => t.id === id);
+
+    if (!task) {
+        console.log(`Task with ID ${id} not found.`);
+        return;
+    }
+
+    task.description = description;
+    writeTasks(tasks);
+    console.log(`Task ${id} updated successfully.`);
+}
