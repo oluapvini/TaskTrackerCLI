@@ -85,3 +85,34 @@ export function update(args) {
     writeTasks(tasks);
     console.log(`Task ${id} updated successfully.`);
 }
+
+export function markTaskStatus(args, status, commandName) {
+    const id = parseInt(args[0], 10);
+
+    if (isNaN(id)) {
+        console.log(`Usage: ${commandName} <id>`);
+        help();
+        return;
+    }
+
+    const tasks = readTasks();
+
+    const task = tasks.find(t => t.id === id);
+
+    if (!task) {
+        console.log(`Task with ID ${id} not found.`);
+        return;
+    }
+
+    task.status = status;
+    writeTasks(tasks);
+    console.log(`Task ${id} marked as ${status}.`);
+}
+
+export function markDone(args) {
+    markTaskStatus(args, "done", "mark-done");
+}
+
+export function markInProgress(args) {
+    markTaskStatus(args, "in-progress", "mark-in-progress");
+}
