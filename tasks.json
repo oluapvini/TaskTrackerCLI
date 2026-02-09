@@ -2,11 +2,11 @@
   {
     "id": 1,
     "description": "Buy milk and eggs",
-    "status": "todo"
+    "status": "in-progress"
   },
   {
     "id": 2,
     "description": "Buy milk",
-    "status": "todo"
+    "status": "done"
   }
 ]
