@@ -116,3 +116,26 @@ export function markDone(args) {
 export function markInProgress(args) {
     markTaskStatus(args, "in-progress", "mark-in-progress");
 }
+
+export function deleteTask(args) {
+  const id = parseInt(args[0], 10);
+
+  if (isNaN(id)) {
+    console.log("Usage: delete <id>");
+    help();
+    return;
+  }
+
+  const tasks = readTasks();
+  const exists = tasks.some(t => t.id === id);
+
+  if (!exists) {
+    console.log(`Task with ID ${id} not found.`);
+    return;
+  }
+
+  const updatedTasks = tasks.filter(t => t.id !== id);
+  writeTasks(updatedTasks);
+
+  console.log(`Task ${id} deleted.`);
+}

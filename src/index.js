@@ -1,5 +1,5 @@
 import { help } from "./utils/help.js";
-import { addTask, list, markDone, markInProgress, update } from "./commands/tasks.js";
+import { addTask, deleteTask, list, markDone, markInProgress, update } from "./commands/tasks.js";
 
 function notImplemented(command) {
   console.log(`${command} is not implemented yet.`);
@@ -23,6 +23,8 @@ switch (command) {
     update(args);
     break;
   case "delete":
+    deleteTask(args);
+    break;
   case "mark-in-progress":
     markInProgress(args);
     break;
